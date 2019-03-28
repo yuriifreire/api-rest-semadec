@@ -1,0 +1,1 @@
+global.SECRET = "yuri-estevao-djalma-rickson";
