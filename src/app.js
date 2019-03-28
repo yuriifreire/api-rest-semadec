@@ -23,7 +23,7 @@ app.use((error,req, res, next) => {
 });
 
 const sequelize = require("./config/database");
-sequelize.sync({force : false}).then(()=>{
+sequelize.sync({force : true}).then(()=>{
     app.listen(3000,()=>{
         console.log("Servidor iniciado!");
     });

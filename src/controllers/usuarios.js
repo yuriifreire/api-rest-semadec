@@ -1,4 +1,3 @@
-
 const Modalidade = require("../models/usuarios");
 const Status = require("http-status");
 const authService = require("../services/auth-service");

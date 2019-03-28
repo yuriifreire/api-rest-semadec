@@ -1,6 +1,6 @@
 const express = require("express");
 const routers = express.Router();
-const controllers = require("../controllers/modalidades");
+const controllers = require("../controllers/modaliades");
 
 routers.get("/",controllers.listarModalidade);
 routers.get("/:id",controllers.buscarUmaModalidade);
