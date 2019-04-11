@@ -5,7 +5,7 @@ const Status = require("http-status");
 
 
 exports.listarModalidade = (req,res,next)=>{
-    Livro.findAll({attributes: ['id', 'nome','descricao', 'resultado'],
+    Modalidade.findAll({attributes: ['id', 'nome','descricao', 'resultado'],
         include:[{
             model: require("../models/atletas"),
             required: true
@@ -21,7 +21,7 @@ exports.criarModalidade = (req,res,next)=>{
     const modalidade = req.body;
     const idsAtletas = modalidade.atletas;
     Modalidade.create(modalidade).then((novaModalidade)=>{
-        novaModalidade.setAutors(idsAtletas).then().catch();
+        novaModalidade.setAtletas(idsAtletas).then().catch();
         res.status(Status.CREATED).send();
     }).catch((erro)=>{
         next(erro);
@@ -30,9 +30,9 @@ exports.criarModalidade = (req,res,next)=>{
 
 exports.buscarUmaModalidade = (req,res,next)=>{
     let id = parseInt(req.params.id);
-    Modalidade.findById(id).then((livro)=>{
-        if (livro){
-            res.status(Status.OK).send(livro);
+    Modalidade.findById(id).then((modalidade)=>{
+        if (modalidade){
+            res.status(Status.OK).send(modalidade);
         }else{
             res.status(Status.NOT_FOUND).send();     
         }
