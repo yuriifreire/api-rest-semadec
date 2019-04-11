@@ -1,5 +1,5 @@
 const {sign, verify} = require("jsonwebtoken");
-const secret = "tsi";
+const secret = "semadec-manager";
 const token = sign({id: 1,nome: "tsi5v"},secret);
 console.log(token);
 
