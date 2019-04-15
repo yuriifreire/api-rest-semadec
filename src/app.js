@@ -11,6 +11,12 @@ app.use("/modalidades",require("./routers/modalidades"));
 
 app.use("/atletas",require('./routers/atletas'));
 
+app.use("/equipes",require('./routers/equipes'));
+
+app.use("/locais",require('./routers/locais'));
+
+app.use("/partidas",require('./routers/partidas'));
+
 app.use("/usuarios",require('./routers/usuarios'));
 
 app.use((req, res, next) => {

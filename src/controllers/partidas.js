@@ -8,8 +8,6 @@ exports.listarPartida = (req,res,next)=>{
     Partida.findAll({attributes: ['id', 'horario','data', 'observacao'],
         include:[{
             model: require("../models/atletas"),
-            required: true,
-            model: require("../models/modalidades"),
             required: true
         }]
     }).then((partidas)=>{
@@ -68,7 +66,7 @@ exports.atualizarPartida = (req,res,next)=>{
     }else{
         Partida.findById(id).then((partida)=>{
             if (partida){
-                Partida.update({horario: partidaBody.horario, horario : partidaBody.horario, observacao : partidaBody.observacao},{where : {id : id}}).then(()=>{
+                Partida.update({horario: partidaBody.horario, data : partidaBody.data, observacao : observacaoBody.observacao},{where : {id : id}}).then(()=>{
                     res.status(Status.OK).send();
                 }).catch((erro)=>{
                     next(erro);

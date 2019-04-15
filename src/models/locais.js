@@ -1,5 +1,5 @@
-const Sequelize = require("sequelize");
-const sequelize = require("../config/database");
+const Sequelize = require('sequelize');
+const sequelize = require('../config/database');
 
 const Local = sequelize.define('local', { 
     id: { type : Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
