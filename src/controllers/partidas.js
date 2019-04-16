@@ -8,6 +8,8 @@ exports.listarPartida = (req,res,next)=>{
     Partida.findAll({attributes: ['id', 'horario','data', 'observacao'],
         include:[{
             model: require("../models/atletas"),
+            required: true,
+            model: require("../models/modalidades"),
             required: true
         }]
     }).then((partidas)=>{

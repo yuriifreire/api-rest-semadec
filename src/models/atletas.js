@@ -9,4 +9,12 @@ const Atleta = sequelize.define('atleta',{
     matricula: { type: Sequelize.STRING(20)},
 });
 
+const Equipe = require('./equipes');
+Atleta.belongsToMany(Equipe,{through : 'atletaequipe'});
+Equipe.belongsToMany(Atleta,{through : 'atletaequipe'});
+
+const Partida = require('./partidas');
+Atleta.belongsToMany(Partida,{through : 'partidaatleta'});
+Partida.belongsToMany(Atleta,{through : 'partidaatleta'});
+
 module.exports = Atleta;

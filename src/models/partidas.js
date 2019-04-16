@@ -8,4 +8,8 @@ const Partida = sequelize.define('partida', {
     observacao : Sequelize.STRING(100)
 });
 
+const Local = require('./locais');
+Partida.belongsToMany(Local,{through : 'partidalocal'});
+Local.belongsToMany(Partida,{through : 'partidalocal'});
+
 module.exports = Partida;
