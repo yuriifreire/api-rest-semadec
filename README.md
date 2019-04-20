@@ -21,4 +21,6 @@
 
 ### Na linha onde você encontra *sequelize.sync({force : true}).then(()=>* deixe o *force : true* apenas na primeira vez que rodar, nas outras mude para *false* ou o seu banco será zerado. 
 
+### Para executar, entre na pasta do projeto e então execute o seguinte comando
+> node ./src/app.js
 
