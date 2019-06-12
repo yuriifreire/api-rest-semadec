@@ -17,8 +17,6 @@ app.use("/locais",require('./routers/locais'));
 
 app.use("/partidas",require('./routers/partidas'));
 
-app.use("/usuarios",require('./routers/usuarios'));
-
 app.use((req, res, next) => {
     res.status(Status.NOT_FOUND).send();
 });

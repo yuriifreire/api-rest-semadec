@@ -4,7 +4,7 @@ const routers = express.Router();
 routers.get("/",(req,res,next)=>{
     res.status(200).send({
         name : "API-Rest Semadec",
-        version : "1.0.0"
+        version : "1.9.8"
     });
 });
 

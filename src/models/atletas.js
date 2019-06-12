@@ -7,7 +7,11 @@ const Atleta = sequelize.define('atleta',{
         len: [2, 50]
     }},
     matricula: { type: Sequelize.STRING(20)},
-});
+    },
+    {
+        timestamps: false,
+        tableName: 'atleta'
+    });
 
 const Equipe = require('./equipes');
 Atleta.belongsToMany(Equipe,{through : 'atletaequipe'});
